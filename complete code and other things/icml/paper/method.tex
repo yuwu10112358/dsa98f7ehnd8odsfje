@@ -1,0 +1,72 @@
+\section{METHODS}
+
+\subsection{Black-Box Models}
+
+To investigate the effectiveness of Papernot's approach outlined in Section \ref{sec:literature} with image feature reduction, a set of three black-box models were selected to act as the oracle for comparison. We chose the logistic regression (LR), support vector machine (SVM), and k-nearest neighbours (kNN) models due to simplicity of implementation and Papernot's use of these models in \cite{papernot3}. We implemented the LR and kNN models as described in the course notes \cite{coursenotes}. For SVM, we used the \texttt{fitcsvm} function in Matlab \cite{matlab}. Since SVMs are binary classifiers, to construct a multiclass classifier, we built an ensemble of one-versus-one classifiers for each pair of classes. The class assigned to a sample is the one that was selected by the majority of the classifiers \cite{multiclasssvm}. The models were trained on the MNIST $50,000$ image sample set, and tested on $10,000$ samples in the test set. The performance of each of these oracle models is shown in Table \ref{tab:oracles}. All models achieved a success rate of $\sim 90 \%$, deeming them sufficiently accurate to utilize as the black-box oracles in experiment.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ccc}
+\toprule
+LR & SVM & kNN\\
+\midrule \midrule
+87.5 & 93.9 & 96.7 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\caption{Percentage of the test set that each model classified correctly.}
+\label{tab:oracles}
+\end{table}
+
+\subsection{Logistic Regression Substitute Model}
+
+An LR substitute model was chosen for this experiment due to its high cross transferability to other models \cite{papernot3}. This model was trained as described in Section \ref{sec:literature} utilizing Jacobian-based augmentation combined with PSS and RS. However, we found the Jacobian used in \cite{papernot3} to be incorrect. Instead, for an LR model $f$ described by the equation as in \cite{papernot3}
+
+\begin{equation} \label{LR_prob}
+	f: \vec{x} \rightarrow \Bigg[ \frac{e^{\vec{w}_{j}\vec{x}}}{\sum_{l=1}^{N}e^{\vec{w}_{l}\vec{x}}} \Bigg]
+\end{equation}
+
+the following Jacobian was used
+
+\begin{equation}
+	J_{f}(\vec{x})[i,j] = \frac{\vec{w}_{j}[i] e^{\vec{w}_{j}\cdot \vec{x}}\sum_{l=1}^{N}e^{\vec{w}_{l} \cdot \vec{x}} - e^{\vec{w}_{j} \cdot \vec{x}}\sum_{l=1}^{N}\vec{w}_{l}[i]e^{\vec{w}_{l} \cdot \vec{x}}}{\bigg(\sum_{l=1}^{N}e^{\vec{w}_{l} \cdot \vec{x}}\bigg)^{2}}
+\end{equation}
+
+where $N = 10$ classes for the MNIST dataset, $\vec{w}$ is the matrix of parameters for the LR substitute model, $\vec{x}$ is a sample in the substitute model's training set. The Jacobian matrix for each sample is of dimension $784 \times 10$ where $28 \times 28$ pixels in each image equals $784$ features. 
+
+\subsection{Generating Adversarial Samples}
+Adversarial samples are generated for the obtained substitute LR model by adding small modifications to the original image. We investigated two methods for crafting adversarial samples: the FGS method \cite{fast_gradient_sign} and the Papernot method \cite{papernot1}.
+
+\subsubsection{Fast Gradient Sign}
+FGS is the algorithm utilized to generate adversarial samples in \cite{papernot3} as described by the following equation:
+
+\begin{equation} \label{eqn:fast_gradient_sign}
+	\vec{x}_{adversary} = \vec{x} + \epsilon \textbf{ sgn}(\nabla_{\vec{x}}f) 
+\end{equation}
+
+where the direction of the disturbance is the sign of the gradient of the probability function $f$ described in Equation $\ref{LR_prob}$ \cite{fast_gradient_sign}. This method is good for preliminary tests because its implementation is simple and very efficient to execute. The tuning parameter $\epsilon$ controls the size of the deviations of the adversarial samples from their origin.
+
+\subsubsection{Papernot Method}
+
+The Papernot method crafts adversarial samples by only perturbing a subset of features with the highest saliency values \cite{papernot1}. %adding a perturbation %$\delta_{\vec{x}}$ 
+% to the original sample, which is a subset of input components (pixels) $\vec{x}_{i}$ \cite{papernot1}. 
+The first $\gamma$ features forming the perturbation, $\delta_{\vec{x}}$, are chosen in the order of decreasing adversarial saliency, $S(\vec{x},t)[i]$, which is defined as follows:
+\begin{equation} \label{eqn:papernot}
+	S(\vec{x},t)[i] = \begin{cases}
+    0 \text{ if } \frac{\partial F_{t}}{\partial \vec{x}_{i}}(\vec{x}) < 0 \text{ or } \sum_{j \neq t} \frac{\partial F_{j}}{\partial \vec{x}_{i}}(\vec{x}) > 0 \\
+   \frac{\partial F_{t}}{\partial \vec{x}_{i}}(\vec{x}) \vert \sum_{j \neq t} \frac{\partial F_{j}}{\partial \vec{x}_{i}}(\vec{x}) \vert \text{       otherwise}
+\end{cases}
+\end{equation}
+
+where matrix $J_{F} = [\frac{\partial F_{j}}{\partial \vec{x}_{i}}]_{ij}$ is the Jacobian. This method is more computationally intensive, but introduces less visible perturbation to each image \cite{papernot1}. Note that the saliency values in expression (\ref{eqn:papernot}) only account for positive perturbations. We extended this method by calculating the saliency for features that introduced negative perturbations using the same setup, and ordered all features based on the absolute value of their saliency.
+
+\subsection{PCA Feature Dimensionality Reduction} \label{sec:pca}
+In an attempt to improve the computational efficiency of the adversarial sample crafting algorithm, we chose to apply principle component analysis (PCA) to reduce the dimensionality of the feature-set. PCA projects the training samples on the first $k$ eigenvectors (loading factors) of the empirical covariance matrix of the dataset, thus reducing the size of the feature space \cite{coursenotes}. Then, each image can be reduced in dimensionality by multipling it by a transformation matrix $T'$ composed of the $k$ loading factors:
+\begin{equation}
+x_i' = T^T x_i
+\end{equation}
+where $x_i$ is the $i^{th}$ image. To restore the reduced images to their original space we reverse the transformation using
+\begin{equation}
+x_i = T x_i' 
+\end{equation}
+since the eigenvectors are orthogonal. The PCA algorithm was implemented with the MATLAB \texttt{pca} command \cite{matlab}. We selected the first $98$ components of the training set, reducing the number of features by a factor of $8$. 

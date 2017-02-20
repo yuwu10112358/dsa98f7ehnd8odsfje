@@ -41,10 +41,21 @@
 % note in the first column to ``Proceedings of the...''
 %\usepackage[accepted]{icml2017}
 
+\usepackage{supertabular,booktabs}
 
 % The \icmltitle you define below is probably too long as a header.
 % Therefore, a short form for the running title is supplied here:
 \icmltitlerunning{Adversarial Attacks on Image Recognition}
 
-\begin{document} 
+\begin{document}
+	\icmltitle{Adversarial Attacks on Image Recognition}
+	\icmlkeywords{Adversarial Attacks, machine learning, ICML}
+	\input{abstract}
+	\input{intro}
+	\input{literature}
+	\input{dataset}
+	
+	
+	\bibliography{references}
+	\bibliographystyle{icml2017}
 \end{document}
