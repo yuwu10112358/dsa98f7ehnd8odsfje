@@ -25,44 +25,64 @@ A comparison of the success of the LR substitute model against the oracle with P
 
 \begin{figure}
     \centering
-    \includegraphics[width =\linewidth, trim = 50 240 50 250, clip]{final_fig_1.pdf}
+    \includegraphics[width =200pt, trim = 110 240 130 250, clip]{figs/final_fig_1.pdf}
     \caption{Percentage of samples for which the substitute model and oracle classifications agree without feature reduction.}
     \label{fig:sub_approx}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width =\linewidth, trim = 50 240 50 250, clip]{fig1_pca.pdf}
+    \includegraphics[width =200pt, trim = 110 240 130 250, clip]{figs/fig1_pca.pdf}
     \caption{Percentage of samples for which the substitute model and oracle classifications agree with PCA feature reduction.}
     \label{fig:sub_approx_pca}
 \end{figure}
 
 \begin{figure*}
-\begin{subfigure}{.49\textwidth}
-\centering
-    \includegraphics[width =0.7\linewidth, trim = 50 180 70 190, clip]{misclass_goodfellow.pdf}
-    \caption{Misclassification rate vs. iteration of the Jacobian-based dataset augmentation for FGS without feature reduction.}
-    \label{fig:missclassify_fgs}
-\end{subfigure}
-\begin{subfigure}{.49\textwidth}
-\centering
-    \includegraphics[width =0.73\linewidth, trim = 110 240 130 245, clip]{missclass_papernot.pdf}
-    \caption{Misclassification rate vs. iteration of the Jacobian-based dataset augmentation for the Papernot method without feature reduction.}
-    \label{fig:missclassify_papernot}
-\end{subfigure}
-\begin{subfigure}{.49\textwidth}
-\centering
-    \includegraphics[width =0.7\linewidth, trim = 50 180 70 190, clip]{misclass_goodfellow_pca.pdf}
-    \caption{Misclassification rate vs. iteration of the Jacobian-based dataset augmentation for FGS with PCA feature reduction.}
-    \label{fig:missclassify_fgspca}
-\end{subfigure}
-\begin{subfigure}{.49\textwidth}
-\centering
-    \includegraphics[width =0.73\linewidth, trim = 110 240 130 245, clip]{missclass_papernot_pca.pdf}
-    \caption{Misclassification rate vs. iteration of the Jacobian-based dataset augmentation for the Papernot method with PCA feature reduction.}
-    \label{fig:missclassify_papernotpca}
-\end{subfigure}
+	\centering
+	\subfigure[Fast Gradient Descent Algorithm]{\label{fig:missclassify_fgs}\includegraphics[width =0.4\linewidth, trim = 50 180 70 205, clip]{figs/misclass_goodfellow.pdf}}
+	\qquad
+	\subfigure[Papernot Algorithm]{\label{fig:missclassify_papernot}\includegraphics[width =0.415\linewidth, trim = 110 240 130 255, clip]{figs/missclass_papernot.pdf}}
+	\caption{Misclassification rate vs. iteration of the Jacobian-based dataset augmentation without feature reduction}
 \end{figure*}
+
+\begin{figure*}
+	\centering
+	\subfigure[Fast Gradient Descent Algorithm]{\label{fig:missclassify_fgspca}\includegraphics[width =0.4\linewidth, trim = 50 180 70 205, clip]{figs/misclass_goodfellow_pca.pdf}}
+	\qquad
+	\subfigure[Papernot Algorithm]{\label{fig:missclassify_papernotpca}\includegraphics[width =0.415\linewidth, trim = 110 240 130 255, clip]{figs/missclass_papernot_pca.pdf}}
+	\caption{Misclassification rate vs. iteration of the Jacobian-based dataset augmentation with PCA feature reduction}
+\end{figure*}
+
+%
+%\begin{figure*}[t]
+%	\centering
+%	\begin{minipage}{0.45\linewidth}
+%		\centering
+%		\label{fig:missclassify_fgs}
+%		\includegraphics[width = 0.95\textwidth, trim = 50 180 70 210, clip]{figs/misclass_goodfellow.pdf}
+%		\caption{Misclassification rate vs. iteration of the Jacobian-based dataset augmentation without feature reduction for FGS method}
+%	\end{minipage}
+%	\qquad
+%	\begin{minipage}{0.45\linewidth}
+%		\centering
+%		\label{fig:missclassify_papernot}
+%		\includegraphics[width =\textwidth, trim = 110 240 130 245, clip]{figs/missclass_papernot.pdf}
+%		\caption{Misclassification rate vs. iteration of the Jacobian-based dataset augmentation without feature reduction for Papernot method}
+%	\end{minipage}
+%	\begin{minipage}{0.45\linewidth}
+%		\centering
+%		\label{fig:missclassify_fgspca}
+%		\includegraphics[width = 0.95\textwidth, trim = 50 180 70 210, clip]{figs/misclass_goodfellow_pca.pdf}
+%		\caption{Misclassification rate vs. iteration of the Jacobian-based dataset augmentation with PCA for FGS method}
+%	\end{minipage}
+%	\qquad
+%	\begin{minipage}{0.45\linewidth}
+%		\centering
+%		\label{fig:missclassify_papernotpca}
+%		\includegraphics[width =\textwidth, trim = 110 240 130 245, clip]{figs/missclass_papernot_pca.pdf}
+%		\caption{Misclassification rate vs. iteration of the Jacobian-based dataset augmentation with PCA for Papernot method}
+%	\end{minipage}
+%\end{figure*}
 
 \subsection{Performance of Crafted Adversarial Samples}
 In our first experiment, we generated adversarial samples on the $10,000$ test samples based on the LR substitute model. The misclassification rates on the adversarial samples by the oracles are given in Figures \ref{fig:missclassify_fgs}  and \ref{fig:missclassify_papernot} for both the FGS and Papernot methods utilizing the full feature sets. To generate adversarial samples with FGS, we used $\epsilon = 0.3$ in Equation $\ref{eqn:fast_gradient_sign}$, which is the same value as that used in $\cite{papernot3}$. For the Papernot method, $10\%$ of the features (pixels) were perturbed for each image ($\gamma = 0.1$) with $\epsilon = 1$, similar to the parameters in \cite{papernot1}. \\
@@ -78,14 +98,14 @@ In our first experiment, we generated adversarial samples on the $10,000$ test s
 
 \begin{figure}
     \centering
-    \includegraphics[width =0.97\linewidth, trim = 120 295 150 280, clip]{confusion_matrix_oracle.pdf}
+    \includegraphics[width =0.97\linewidth, trim = 120 295 150 280, clip]{figs/confusion_matrix_oracle.pdf}
     \caption{Confusion matrix against the LR oracle for the original 10,000 test samples.}
     \label{fig:confusion_matrix_oracle}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width =0.97\linewidth, trim = 120 295 150 280, clip]{confusion_matrix_papernotpca.pdf}
+    \includegraphics[width =0.97\linewidth, trim = 120 295 150 280, clip]{figs/confusion_matrix_papernotpca.pdf}
     \caption{Confusion matrix against the LR oracle for the 10,000 adversarial samples generated using the Papernot method with PCA.}
     \label{fig:confusion_matrix_papernotpca}
 \end{figure}
@@ -101,7 +121,7 @@ FGS & 1.3912 & 1.5692 & 1.7441 \\
 FGS + PCA & 1.3509 & 1.2557 & 1.3681\\
 \bottomrule
 \end{tabular}
-   \captionof{table}{Runtime for generating 10,000 adversarial samples in seconds for the three oracle models using FGS.}
+   \caption{Runtime for generating 10,000 adversarial samples in seconds for the three oracle models using FGS.}
     \label{runtime_FGS}
 \end{table}
 
@@ -116,7 +136,7 @@ Papernot & 7.9147 & 7.9776 & 8.57\\
 Papernot + PCA & 3.1826 & 3.0719 & 3.3997\\
 \bottomrule
 \end{tabular}
-   \captionof{table}{Runtime for generating 10,000 adversarial samples in seconds for the three oracle models using Papernot method.}
+   \caption{Runtime for generating 10,000 adversarial samples in seconds for the three oracle models using Papernot method.}
    \label{runtime_Papernot}
 \end{table}
 
@@ -131,7 +151,7 @@ Original images & 87.4645 &  87.3036  & 87.5300 \\
 Adversarial images & 37.3687 &  37.2288 &  37.8400\\
 \bottomrule
 \end{tabular}
-   \captionof{table}{Average precision, recall, and accuracy for the original test images and adversarial images constructed using Papernot algorithm with PCA.}
+   \caption{Average precision, recall, and accuracy for the original test images and adversarial images constructed using Papernot algorithm with PCA.}
    \label{tablewithstuff}
 \end{table}
 
@@ -139,23 +159,23 @@ Adversarial images & 37.3687 &  37.2288 &  37.8400\\
 \centering
 \begin{minipage}{.09\textwidth}
 	\centering
-    \includegraphics[width =0.9\linewidth, trim = 300 400 300 375, clip]{orig9.pdf}
+    \includegraphics[width =0.9\linewidth, trim = 300 400 300 375, clip]{figs/orig9.pdf}
 \end{minipage}%
 \begin{minipage}{.09\textwidth}
 	\centering
-\includegraphics[width =0.9\linewidth, trim = 300 400 300 375, clip]{goodfellow9.pdf}
+\includegraphics[width =0.9\linewidth, trim = 300 400 300 375, clip]{figs/goodfellow9.pdf}
 \end{minipage}
 \begin{minipage}{.09\textwidth}
 	\centering
-    \includegraphics[width =0.9\linewidth, trim = 300 400 300 375, clip]{goodfellow9pca.pdf}
+    \includegraphics[width =0.9\linewidth, trim = 300 400 300 375, clip]{figs/goodfellow9pca.pdf}
 \end{minipage}
 \begin{minipage}{.09\textwidth}
 	\centering
-    \includegraphics[width =0.9\linewidth, trim = 300 400 300 375, clip]{papernot9.pdf}
+    \includegraphics[width =0.9\linewidth, trim = 300 400 300 375, clip]{figs/papernot9.pdf}
 \end{minipage}
 \begin{minipage}{.09\textwidth}
 	\centering
-    \includegraphics[width =0.9\linewidth, trim = 300 400 300 375, clip]{papernot9pca.pdf}
+    \includegraphics[width =0.9\linewidth, trim = 300 400 300 375, clip]{figs/papernot9pca.pdf}
 \end{minipage}
 \caption{From left to right, the figures are: original image, adversarial image with FGS method, adversarial image with FGS method and PCA feature reduction, adversarial image with Papernot method, adversarial image with Papernot method and PCA.}\label{fig:picof9s}
 \end{figure}

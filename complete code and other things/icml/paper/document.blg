@@ -1,3 +1,9 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: document.aux
 The style file: icml2017.bst
 Database file #1: references.bib
+Warning--entry type for "multiclasssvm" isn't style-file defined
+--line 80 of file references.bib
+Warning--empty booktitle in fast_gradient_sign
+Warning--empty journal in coursenotes
+Warning--empty year in multiclasssvm
+(There were 4 warnings)

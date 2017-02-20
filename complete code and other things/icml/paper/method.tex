@@ -52,8 +52,8 @@ The Papernot method crafts adversarial samples by only perturbing a subset of fe
 % to the original sample, which is a subset of input components (pixels) $\vec{x}_{i}$ \cite{papernot1}. 
 The first $\gamma$ features forming the perturbation, $\delta_{\vec{x}}$, are chosen in the order of decreasing adversarial saliency, $S(\vec{x},t)[i]$, which is defined as follows:
 \begin{equation} \label{eqn:papernot}
-	S(\vec{x},t)[i] = \begin{cases}
-    0 \text{ if } \frac{\partial F_{t}}{\partial \vec{x}_{i}}(\vec{x}) < 0 \text{ or } \sum_{j \neq t} \frac{\partial F_{j}}{\partial \vec{x}_{i}}(\vec{x}) > 0 \\
+S(\vec{x},t)[i] = \begin{cases}
+   0 \text{ if } \frac{\partial F_{t}}{\partial \vec{x}_{i}}(\vec{x}) < 0 \text{ or } \sum_{j \neq t} \frac{\partial F_{j}}{\partial \vec{x}_{i}}(\vec{x}) > 0 \\
    \frac{\partial F_{t}}{\partial \vec{x}_{i}}(\vec{x}) \vert \sum_{j \neq t} \frac{\partial F_{j}}{\partial \vec{x}_{i}}(\vec{x}) \vert \text{       otherwise}
 \end{cases}
 \end{equation}
