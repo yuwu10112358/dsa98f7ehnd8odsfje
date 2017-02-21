@@ -90,21 +90,12 @@ In our first experiment, we generated adversarial samples on the $10,000$ test s
 
 %We implemented the above algorithm utilizing a reduced image feature set. Specifically, we reduced each of the $28 \times 28$ pixel images in the LR substitute model training set by a \textbf{factor of 8}.
 
-\begin{figure*}[h]
+\begin{figure*}[htbp]
 	\centering
-	\begin{minipage}{0.45\linewidth}
-		\centering
-		\includegraphics[width =\linewidth, trim = 140 295 150 280, clip]{figs/confusion_matrix_oracle.pdf}
-		\caption{Confusion matrix against the LR oracle for the original 10,000 test samples.}
-		\label{fig:confusion_matrix_oracle}
-	\end{minipage}
+	\subfigure[Original 10,000 test samples]{\label{fig:confusion_matrix_oracle}\includegraphics[width =0.4\linewidth, trim = 140 295 150 280,, clip]{figs/confusion_matrix_oracle.pdf}}
 	\qquad
-	\begin{minipage}{0.45\linewidth}
-		\centering
-		\includegraphics[width =\linewidth, trim = 140 295 150 265, clip]{figs/confusion_matrix_papernotpca.pdf}
-		\caption{Confusion matrix against the LR oracle for the 10,000 adversarial samples generated using the Papernot method with PCA.}
-		\label{fig:confusion_matrix_papernotpca}
-	\end{minipage}
+	\subfigure[10,000 adversarial samples generated using the Papernot method with PCA]{\label{fig:confusion_matrix_papernotpca}\includegraphics[width =0.4\linewidth, trim = 140 295 150 280, clip]{figs/confusion_matrix_papernotpca.pdf}}
+	\caption{Confusion matrix against the LR oracle.}
 \end{figure*}
 
 \begin{table}[t]
