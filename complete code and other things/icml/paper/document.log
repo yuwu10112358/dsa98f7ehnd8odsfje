@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.11)  20 FEB 2017 15:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.11)  20 FEB 2017 16:54
 entering extended mode
 **document.tex
 (document.tex
@@ -478,34 +478,34 @@ Underfull \vbox (badness 1430) has occurred while \output is active []
 File: figs/final_fig_1.pdf Graphic file (type pdf)
 
 <use figs/final_fig_1.pdf>
-Package pdftex.def Info: figs/final_fig_1.pdf used on input line 28.
+Package pdftex.def Info: figs/final_fig_1.pdf used on input line 36.
 (pdftex.def)             Requested size: 200.0pt x 162.3656pt.
  <figs/fig1_pca.pdf, id=128, 614.295pt x 794.97pt>
 File: figs/fig1_pca.pdf Graphic file (type pdf)
 
 <use figs/fig1_pca.pdf>
-Package pdftex.def Info: figs/fig1_pca.pdf used on input line 35.
+Package pdftex.def Info: figs/fig1_pca.pdf used on input line 43.
 (pdftex.def)             Requested size: 200.0pt x 162.3656pt.
 
 <figs/misclass_goodfellow.pdf, id=130, 614.295pt x 794.97pt>
 File: figs/misclass_goodfellow.pdf Graphic file (type pdf)
 
 <use figs/misclass_goodfellow.pdf>
-Package pdftex.def Info: figs/misclass_goodfellow.pdf used on input line 42.
+Package pdftex.def Info: figs/misclass_goodfellow.pdf used on input line 50.
 (pdftex.def)             Requested size: 195.126pt x 161.41872pt.
 
 <figs/missclass_papernot.pdf, id=132, 614.295pt x 794.97pt>
 File: figs/missclass_papernot.pdf Graphic file (type pdf)
 
 <use figs/missclass_papernot.pdf>
-Package pdftex.def Info: figs/missclass_papernot.pdf used on input line 44.
+Package pdftex.def Info: figs/missclass_papernot.pdf used on input line 52.
 (pdftex.def)             Requested size: 202.44305pt x 161.6243pt.
 
 <figs/misclass_goodfellow_pca.pdf, id=134, 614.295pt x 794.97pt>
 File: figs/misclass_goodfellow_pca.pdf Graphic file (type pdf)
 
 <use figs/misclass_goodfellow_pca.pdf>
-Package pdftex.def Info: figs/misclass_goodfellow_pca.pdf used on input line 50
+Package pdftex.def Info: figs/misclass_goodfellow_pca.pdf used on input line 58
 .
 (pdftex.def)             Requested size: 195.126pt x 161.41872pt.
 
@@ -513,7 +513,7 @@ Package pdftex.def Info: figs/misclass_goodfellow_pca.pdf used on input line 50
 File: figs/missclass_papernot_pca.pdf Graphic file (type pdf)
 
 <use figs/missclass_papernot_pca.pdf>
-Package pdftex.def Info: figs/missclass_papernot_pca.pdf used on input line 52.
+Package pdftex.def Info: figs/missclass_papernot_pca.pdf used on input line 60.
 
 (pdftex.def)             Requested size: 202.44305pt x 161.6243pt.
  [3] [4 <./figs/misclass_goodfellow.pdf> <./figs/missclass_papernot.pdf> <./fig
@@ -521,57 +521,64 @@ s/misclass_goodfellow_pca.pdf> <./figs/missclass_papernot_pca.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5 <./figs/final_fig_1.pdf> <./figs/fig1_pca.pdf>]
-<figs/confusion_matrix_oracle.pdf, id=212, 614.295pt x 794.97pt>
+<figs/confusion_matrix_oracle.pdf, id=213, 614.295pt x 794.97pt>
 File: figs/confusion_matrix_oracle.pdf Graphic file (type pdf)
 
 <use figs/confusion_matrix_oracle.pdf>
-Package pdftex.def Info: figs/confusion_matrix_oracle.pdf used on input line 10
-1.
+Package pdftex.def Info: figs/confusion_matrix_oracle.pdf used on input line 79
+.
 (pdftex.def)             Requested size: 227.83145pt x 144.56421pt.
 
-<figs/confusion_matrix_papernotpca.pdf, id=214, 614.295pt x 794.97pt>
+<figs/confusion_matrix_papernotpca.pdf, id=215, 614.295pt x 794.97pt>
 File: figs/confusion_matrix_papernotpca.pdf Graphic file (type pdf)
 
 <use figs/confusion_matrix_papernotpca.pdf>
 Package pdftex.def Info: figs/confusion_matrix_papernotpca.pdf used on input li
-ne 108.
+ne 86.
 (pdftex.def)             Requested size: 227.83145pt x 144.56421pt.
 
-<figs/orig9.pdf, id=216, 614.295pt x 794.97pt>
+Overfull \hbox (20.91208pt too wide) in paragraph at lines 144--156
+ [] 
+ []
+
+<figs/orig9.pdf, id=217, 614.295pt x 794.97pt>
 File: figs/orig9.pdf Graphic file (type pdf)
  <use figs/orig9.pdf>
-Package pdftex.def Info: figs/orig9.pdf used on input line 162.
+Package pdftex.def Info: figs/orig9.pdf used on input line 164.
 (pdftex.def)             Requested size: 39.51173pt x 55.97781pt.
 
-<figs/goodfellow9.pdf, id=218, 614.295pt x 794.97pt>
+<figs/goodfellow9.pdf, id=219, 614.295pt x 794.97pt>
 File: figs/goodfellow9.pdf Graphic file (type pdf)
 
 <use figs/goodfellow9.pdf>
-Package pdftex.def Info: figs/goodfellow9.pdf used on input line 166.
+Package pdftex.def Info: figs/goodfellow9.pdf used on input line 168.
 (pdftex.def)             Requested size: 39.51173pt x 55.97781pt.
 
-<figs/goodfellow9pca.pdf, id=220, 614.295pt x 794.97pt>
+<figs/goodfellow9pca.pdf, id=221, 614.295pt x 794.97pt>
 File: figs/goodfellow9pca.pdf Graphic file (type pdf)
 
 <use figs/goodfellow9pca.pdf>
-Package pdftex.def Info: figs/goodfellow9pca.pdf used on input line 170.
+Package pdftex.def Info: figs/goodfellow9pca.pdf used on input line 172.
 (pdftex.def)             Requested size: 39.51173pt x 55.97781pt.
 
-<figs/papernot9.pdf, id=222, 614.295pt x 794.97pt>
+<figs/papernot9.pdf, id=223, 614.295pt x 794.97pt>
 File: figs/papernot9.pdf Graphic file (type pdf)
  <use figs/papernot9.pdf>
-Package pdftex.def Info: figs/papernot9.pdf used on input line 174.
+Package pdftex.def Info: figs/papernot9.pdf used on input line 176.
 (pdftex.def)             Requested size: 39.51173pt x 55.97781pt.
 
-<figs/papernot9pca.pdf, id=224, 614.295pt x 794.97pt>
+<figs/papernot9pca.pdf, id=225, 614.295pt x 794.97pt>
 File: figs/papernot9pca.pdf Graphic file (type pdf)
 
 <use figs/papernot9pca.pdf>
-Package pdftex.def Info: figs/papernot9pca.pdf used on input line 178.
+Package pdftex.def Info: figs/papernot9pca.pdf used on input line 180.
 (pdftex.def)             Requested size: 39.51173pt x 55.97781pt.
-) (conclusion.tex) (document.bbl [6 <./figs/confusion_matrix_oracle.pdf> <./fig
-s/confusion_matrix_papernotpca.pdf> <./figs/orig9.pdf> <./figs/goodfellow9.pdf>
- <./figs/goodfellow9pca.pdf> <./figs/papernot9.pdf> <./figs/papernot9pca.pdf>]
+) (conclusion.tex) (document.bbl
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <./figs/confusion_matrix_oracle.pdf> <./figs/confusion_matrix_papernotpca.p
+df> <./figs/orig9.pdf> <./figs/goodfellow9.pdf> <./figs/goodfellow9pca.pdf> <./
+figs/papernot9.pdf> <./figs/papernot9pca.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 50--54
 [][]$\OT1/pcr/m/n/10 http : / / nlp . stanford . edu / IR-[]book / html /$
  []
@@ -590,28 +597,29 @@ Package rerunfilecheck Info: File `document.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 64.
  ) 
 Here is how much of TeX's memory you used:
- 7346 strings out of 493698
- 103299 string characters out of 3144423
- 219881 words of memory out of 3000000
- 10474 multiletter control sequences out of 15000+200000
- 23644 words of font info for 48 fonts, out of 3000000 for 9000
+ 7372 strings out of 493698
+ 103563 string characters out of 3144423
+ 219892 words of memory out of 3000000
+ 10492 multiletter control sequences out of 15000+200000
+ 28470 words of font info for 62 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 31i,11n,45p,1521b,339s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,11n,45p,1521b,426s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8
-a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on document.pdf (7 pages, 239174 bytes).
+sfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/tim
+es/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on document.pdf (7 pages, 247665 bytes).
 PDF statistics:
- 335 PDF objects out of 1000 (max. 8388607)
+ 339 PDF objects out of 1000 (max. 8388607)
  57 named destinations out of 1000 (max. 500000)
  144 words of extra memory for PDF output out of 10000 (max. 10000000)
 
