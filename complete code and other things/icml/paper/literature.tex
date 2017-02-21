@@ -1,6 +1,6 @@
 \section{LITERATURE} \label{sec:literature}
 
-Papernot et al. in \cite{papernot3} described the following two step approach during adversarial sample creation for a black-box machine learning algorithm referred to as the 'oracle' from this point forward:
+Papernot et al. in \yrcite{papernot3} described the following two step approach during adversarial sample creation for a black-box machine learning algorithm referred to as the 'oracle' from this point forward:
 % should we mention the Papernot method here?
 \begin{enumerate}
 \item \label{step1} Train a substitute model utilizing as few calls to the oracle as possible.  
@@ -11,12 +11,10 @@ In \cite{papernot3}, the logistic regression (LR) and deep neural network (DNN) 
 \begin{equation} \label{eq:1}
 	S_{\rho+1} = \left\{\vec{x} + \lambda_{\rho}\textbf{sgn}(J_{f}[O[(\vec{x})] : \vec{x} \in S_{\rho})\right\} \cup S_{\rho}
 \end{equation}
-
 where $S$ is the training set, $\vec{x}$ is a sample in $S$, $O(\vec{x})$ is the label given to sample $\vec{x}$ by the oracle, $J_{f}$ is the Jacobian matrix of the substitute model $f$, and $\lambda$ is the tuneable step-size parameter. At each iteration $\rho$, the training set is augmented by utilizing Equation \ref{eq:1}. The oracle is then called to obtain the labels for the new training dataset, and subsequently a new substitute model $f$ is trained. Furthermore, in \cite{papernot3}, the periodic step size (PSS) technique was introduced to improve the approximation of the oracle with the substitute model by multiplying the $\lambda$ parameter by $-1$ when the Jacobian augmentation method no longer lead to a significant improvement in the substitute model. Then, $\lambda_{\rho}$ is defined as
-\begin{equation}
+\begin{align}
 	\lambda_{\rho} = \lambda(-1)^{\left \lfloor \frac{\rho}{\tau} \right \rfloor}    
-\end{equation}
+\end{align}
+where $\tau$ is the number of iterations after which the Jacobian augmentation method is no longer effective. However, the oracle should not be queried excessively to avoid raising suspicion. To diminish the calls to the oracle, reservoir sampling (RS) was utilized. Reservoir sampling selects $\kappa$ randomly generated new samples after $\sigma$ iterations have been completed normally. This decreases the number of calls to the oracle from $n(2^{\rho})$ to $n(2^{\sigma}) + \kappa (\rho-\sigma)$ \cite{papernot3}. Papernot et al. found that a Jacobian augmentation method combined with PSS and RS produced substitute models that approximated the oracle model successfully. 
 
-where $\tau$ is the number of iterations after which the Jacobian augmentation method is no longer effective. However, the oracle should not be queried excessively to avoid raising suspicion. To diminish the calls to the oracle, reservoir sampling (RS) was utilized. Reservoir sampling selects $\kappa$ randomly generated new samples after $\sigma$ iterations have been completed normally. This decreases the number of calls to the oracle from $n(2)^{\rho}$ to $n(2)^{\sigma} + \kappa (\rho-\sigma)$ \cite{papernot3}. Papernot et al. found that a Jacobian augmentation method combined with PSS and RS produced substitute models that approximated the oracle model successfully. 
-
-The purpose of this project is to extend the work done by Papernot et al. in \cite{papernot3} on adversarial attacks in image recognition. We investigated whether a reduction in feature dimensionality during adversarial sample crafting improved computational efficiency, while maintaining a comparable level of success in misclassification of the adversarial samples. We formed an attack on an oracle with a training set unknown to the substitute model by forcing the oracle to misclassify images that were modified with white noise undetectable to humans.
+The purpose of this project is to extend the work done by Papernot et al. in \yrcite{papernot3} on adversarial attacks in image recognition. We investigated whether a reduction in feature dimensionality during adversarial sample crafting improved computational efficiency, while maintaining a comparable level of success in misclassification of the adversarial samples. We formed an attack on an oracle with a training set unknown to the substitute model by forcing the oracle to misclassify images that were modified with white noise undetectable to humans.
