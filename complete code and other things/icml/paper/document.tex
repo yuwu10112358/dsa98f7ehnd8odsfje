@@ -47,11 +47,46 @@
 
 % The \icmltitle you define below is probably too long as a header.
 % Therefore, a short form for the running title is supplied here:
-\icmltitlerunning{Adversarial Attacks on Image Recognition}
 
 \begin{document}
-	\icmltitle{Adversarial Attacks on Image Recognition}
-	\icmlkeywords{Adversarial Attacks, machine learning, ICML}
+	\twocolumn[
+	\icmltitle{Improving Adversarial Attacks on Image Recognition with PCA}
+	
+	% It is OKAY to include author information, even for blind
+	% submissions: the style file will automatically remove it for you
+	% unless you've provided the [accepted] option to the icml2017
+	% package.
+	
+	% list of affiliations. the first argument should be a (short)
+	% identifier you will use later to specify author affiliations
+	% Academic affiliations should list Department, University, City, Region, Country
+	% Industry affiliations should list Company, City, Region, Country
+	
+	% you can specify symbols, otherwise they are numbered in order
+	% ideally, you should not use this facility. affiliations will be numbered
+	% in order of appearance and this is the preferred way.
+	\icmlsetsymbol{equal}{*}
+	
+	\begin{icmlauthorlist}
+		\icmlauthor{Yu Wu}{equal,a}
+		\icmlauthor{Masha Itkina}{equal,to,b}
+		\icmlauthor{Bahman Bahami}{equal,to,c}
+	\end{icmlauthorlist}
+	
+	\icmlaffiliation{a}{Stanford University}
+	\icmlaffiliation{b}{Stanford University}
+	\icmlaffiliation{c}{Stanford University}
+	
+	\icmlcorrespondingauthor{}{}
+	
+	% You may provide any keywords that you 
+	% find helpful for describing your paper; these are used to populate 
+	% the "keywords" metadata in the PDF but will not be shown in the document
+	\icmlkeywords{PCA, adversarial attacks, machine learning}
+	
+	\vskip 0.3in
+	]
+	\printAffiliationsAndNotice{}
 	\input{abstract}
 	\input{intro}
 	\input{literature}

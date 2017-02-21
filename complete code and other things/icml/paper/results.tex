@@ -31,25 +31,28 @@ The ability of the substitute model to approximate the LR, kNN, and SVM oracles 
 
 A comparison of the success of the LR substitute model against the oracle with PCA feature reduction is portrayed in Figure \ref{fig:sub_approx_pca}. The PCA algorithm reduced the dimensionality of the feature space by a factor of 8, but the results of the trained LR substitute model were nearly identical to those with the entire feature space. Hence, PCA has minimal effect on the training of the substitute model, and is a valid method for feature space reduction. 
 
-\begin{figure}
-    \centering
-    \includegraphics[width =200pt, trim = 110 240 130 250, clip]{figs/final_fig_1.pdf}
-    \caption{Percentage of samples for which the substitute model and oracle classifications agree without feature reduction.}
-    \label{fig:sub_approx}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width =200pt, trim = 110 240 130 250, clip]{figs/fig1_pca.pdf}
-    \caption{Percentage of samples for which the substitute model and oracle classifications agree with PCA feature reduction.}
-    \label{fig:sub_approx_pca}
-\end{figure}
+\begin{figure*}
+	\centering
+	\begin{minipage}{0.42\linewidth}
+		\centering
+		\includegraphics[width =\linewidth, trim = 110 240 120 255, clip]{figs/final_fig_1.pdf}
+		\caption{Percentage of samples for which the substitute model and oracle classifications agree without feature reduction.}
+		\label{fig:sub_approx}
+	\end{minipage}
+	\qquad
+	\begin{minipage}{0.42\linewidth}
+		\centering
+		\includegraphics[width =\linewidth, trim = 110 240 120 255, clip]{figs/fig1_pca.pdf}
+		\caption{Percentage of samples for which the substitute model and oracle classifications agree with PCA feature reduction.}
+		\label{fig:sub_approx_pca}
+	\end{minipage}
+\end{figure*}
 
 \begin{figure*}
 	\centering
 	\subfigure[Fast Gradient Descent Algorithm]{\label{fig:missclassify_fgs}\includegraphics[width =0.4\linewidth, trim = 50 180 70 205, clip]{figs/misclass_goodfellow.pdf}}
 	\qquad
-	\subfigure[Papernot Algorithm]{\label{fig:missclassify_papernot}\includegraphics[width =0.415\linewidth, trim = 110 240 130 255, clip]{figs/missclass_papernot.pdf}}
+	\subfigure[Papernot Algorithm]{\label{fig:missclassify_papernot}\includegraphics[width =0.415\linewidth, trim = 110 240 120 255, clip]{figs/missclass_papernot.pdf}}
 	\caption{Misclassification rate vs. iteration of the Jacobian-based dataset augmentation without feature reduction}
 \end{figure*}
 
@@ -57,7 +60,7 @@ A comparison of the success of the LR substitute model against the oracle with P
 	\centering
 	\subfigure[Fast Gradient Descent Algorithm]{\label{fig:missclassify_fgspca}\includegraphics[width =0.4\linewidth, trim = 50 180 70 205, clip]{figs/misclass_goodfellow_pca.pdf}}
 	\qquad
-	\subfigure[Papernot Algorithm]{\label{fig:missclassify_papernotpca}\includegraphics[width =0.415\linewidth, trim = 110 240 130 255, clip]{figs/missclass_papernot_pca.pdf}}
+	\subfigure[Papernot Algorithm]{\label{fig:missclassify_papernotpca}\includegraphics[width =0.415\linewidth, trim = 110 240 120 255, clip]{figs/missclass_papernot_pca.pdf}}
 	\caption{Misclassification rate vs. iteration of the Jacobian-based dataset augmentation with PCA feature reduction}
 \end{figure*}
 
@@ -76,14 +79,14 @@ In our first experiment, we generated adversarial samples on the $10,000$ test s
 
 \begin{figure}
     \centering
-    \includegraphics[width =0.97\linewidth, trim = 120 295 150 280, clip]{figs/confusion_matrix_oracle.pdf}
+    \includegraphics[width =\linewidth, trim = 120 295 150 280, clip]{figs/confusion_matrix_oracle.pdf}
     \caption{Confusion matrix against the LR oracle for the original 10,000 test samples.}
     \label{fig:confusion_matrix_oracle}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width =0.97\linewidth, trim = 120 295 150 280, clip]{figs/confusion_matrix_papernotpca.pdf}
+    \includegraphics[width =\linewidth, trim = 120 295 150 280, clip]{figs/confusion_matrix_papernotpca.pdf}
     \caption{Confusion matrix against the LR oracle for the 10,000 adversarial samples generated using the Papernot method with PCA.}
     \label{fig:confusion_matrix_papernotpca}
 \end{figure}
@@ -147,8 +150,8 @@ In our first experiment, we generated adversarial samples on the $10,000$ test s
 					&Precision & Recall & Accuracy\\
 					\hline
 					\abovespace
-					Original images & 87.4645 &  87.3036  & 87.5300 \\
-					Adversarial images & 37.3687 &  37.2288 &  37.8400\\				
+					Original & 87.4645 &  87.3036  & 87.5300 \\
+					Adversarial & 37.3687 &  37.2288 &  37.8400\\				
 					\hline
 				\end{tabular}
 			\end{sc}
