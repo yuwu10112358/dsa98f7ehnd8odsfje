@@ -30,21 +30,29 @@ As in \cite{papernot3}, the LR substitute model began with a training set of $10
 The ability of the substitute model to approximate the LR, kNN, and SVM oracles is summarized in Figure \ref{fig:sub_approx}. The percentage of samples for which the substitute model's and oracle's classifications match is plotted against the iteration of the training set augmentation. These results agree with those in \cite{papernot3} quite well. The success rate increased steadily until it plateaued at the third iteration, after which RS is activated. As expected, the LR substitute model performed the best on an LR model oracle; nevertheless, it performed well even on the SVM and kNN oracles. The algorithm could theoretically be truncated at the third iteration since past this point it had nearly reached convergence, saving computation time.
 
 
+%\begin{figure*}
+%	\centering
+%	\begin{minipage}{0.42\linewidth}
+%		\centering
+%		\includegraphics[width =\linewidth, trim = 110 240 120 255, clip]{figs/final_fig_1.pdf}
+%		\caption{Percentage of samples for which the substitute model and oracle classifications agree without feature reduction.}
+%		\label{fig:sub_approx}
+%	\end{minipage}
+%	\qquad
+%	\begin{minipage}{0.42\linewidth}
+%		\centering
+%		\includegraphics[width =\linewidth, trim = 110 240 120 255, clip]{figs/fig1_pca.pdf}
+%		\caption{Percentage of samples for which the substitute model and oracle classifications agree with PCA feature reduction.}
+%		\label{fig:sub_approx_pca}
+%	\end{minipage}
+%\end{figure*}
+
 \begin{figure*}
 	\centering
-	\begin{minipage}{0.42\linewidth}
-		\centering
-		\includegraphics[width =\linewidth, trim = 110 240 120 255, clip]{figs/final_fig_1.pdf}
-		\caption{Percentage of samples for which the substitute model and oracle classifications agree without feature reduction.}
-		\label{fig:sub_approx}
-	\end{minipage}
+	\subfigure[Without feature reduction]{\label{fig:sub_approx}\includegraphics[width =0.415\linewidth, trim = 110 240 120 255, clip]{figs/final_fig_1.pdf}}
 	\qquad
-	\begin{minipage}{0.42\linewidth}
-		\centering
-		\includegraphics[width =\linewidth, trim = 110 240 120 255, clip]{figs/fig1_pca.pdf}
-		\caption{Percentage of samples for which the substitute model and oracle classifications agree with PCA feature reduction.}
-		\label{fig:sub_approx_pca}
-	\end{minipage}
+	\subfigure[With PCA feature reduction]{\label{fig:sub_approx_pca}\includegraphics[width =0.415\linewidth, trim = 110 240 120 255, clip]{figs/fig1_pca.pdf}}
+	\caption{Percentage of samples for which the substitute model and oracle classifications agree.}
 \end{figure*}
 
 \begin{figure*}
@@ -52,7 +60,7 @@ The ability of the substitute model to approximate the LR, kNN, and SVM oracles 
 	\subfigure[Fast Gradient Descent Algorithm]{\label{fig:missclassify_fgs}\includegraphics[width =0.4\linewidth, trim = 50 180 70 205, clip]{figs/misclass_goodfellow.pdf}}
 	\qquad
 	\subfigure[Papernot Algorithm]{\label{fig:missclassify_papernot}\includegraphics[width =0.415\linewidth, trim = 110 240 120 255, clip]{figs/missclass_papernot.pdf}}
-	\caption{Misclassification rate vs. iteration of the Jacobian-based dataset augmentation without feature reduction}
+	\caption{Misclassification rate vs. iteration of the Jacobian-based dataset augmentation without feature reduction.}
 \end{figure*}
 
 \begin{figure*}
@@ -60,7 +68,7 @@ The ability of the substitute model to approximate the LR, kNN, and SVM oracles 
 	\subfigure[Fast Gradient Descent Algorithm]{\label{fig:missclassify_fgspca}\includegraphics[width =0.4\linewidth, trim = 50 180 70 205, clip]{figs/misclass_goodfellow_pca.pdf}}
 	\qquad
 	\subfigure[Papernot Algorithm]{\label{fig:missclassify_papernotpca}\includegraphics[width =0.415\linewidth, trim = 110 240 120 255, clip]{figs/missclass_papernot_pca.pdf}}
-	\caption{Misclassification rate vs. iteration of the Jacobian-based dataset augmentation with PCA feature reduction}
+	\caption{Misclassification rate vs. iteration of the Jacobian-based dataset augmentation with PCA feature reduction.}
 \end{figure*}
 
 A comparison of the success of the LR substitute model against the oracle with PCA feature reduction is portrayed in Figure \ref{fig:sub_approx_pca}. The PCA algorithm reduced the dimensionality of the feature space by a factor of 8, but the results of the trained LR substitute model were nearly identical to those with the entire feature space. Hence, PCA has minimal effect on the training of the substitute model, and is a valid method for feature space reduction. 
